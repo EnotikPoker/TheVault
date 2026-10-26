@@ -1,0 +1,41 @@
+:root {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  color: #e3e9df;
+  background: #101818;
+  font-synthesis: none;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+.app { width: min(100% - 40px, 600px); margin: 64px auto; }
+.eyebrow { font-size: 11px; letter-spacing: 0.2em; color: #a2b5a7; }
+h1 { margin: 16px 0; font-size: clamp(36px, 9vw, 60px); letter-spacing: 0.08em; }
+.intro { max-width: 440px; line-height: 1.7; color: #b8c3b9; }
+.vault-panel { margin-top: 36px; padding: 28px; border: 1px solid #59665d; border-radius: 12px; background: #1b2523; }
+.panel-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 10px; letter-spacing: 0.1em; color: #b8c3b9; }
+.switches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 30px 0; padding: 0; border: 0; }
+.switches legend { margin-bottom: 18px; font-size: 12px; color: #b8c3b9; }
+.switch { display: grid; justify-items: center; gap: 12px; cursor: pointer; }
+.switch input { appearance: none; width: 28px; height: 48px; margin: 0; padding: 4px; border: 1px solid #75847a; border-radius: 5px; background: #101818; cursor: pointer; }
+.switch input::before { content: ''; display: block; height: 18px; margin-top: 20px; border-radius: 2px; background: #869489; }
+.switch input:checked::before { margin-top: 0; background: #b8e19d; }
+.switch input:focus-visible { outline: 3px solid #b8e19d; outline-offset: 4px; }
+.switch-state { font-size: 11px; color: #b8c3b9; }
+.switch-state::after { content: 'OFF'; }
+.switch input:checked + .switch-state::after { content: 'ON'; color: #b8e19d; }
+.indicators { list-style: none; padding: 20px 0; margin: 0; border-block: 1px solid #435148; }
+.indicators li { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; font-size: 13px; }
+.indicator-result { display: flex; align-items: center; gap: 10px; font-size: 10px; color: #b8c3b9; }
+.indicator-result i { width: 9px; height: 9px; border: 1px solid #87998a; border-radius: 50%; }
+.check-button { width: 100%; margin: 24px 0 8px; padding: 16px; border: 1px solid #59665d; border-radius: 4px; font: inherit; background: #2b3831; color: #a5b2a7; }
+.check-button:disabled { cursor: not-allowed; }
+.attempts { font-size: 12px; color: #b8c3b9; }
+.prototype-note, .connection { font-size: 11px; line-height: 1.7; color: #a2b5a7; }
+.connection { margin-top: 20px; }
+
+@media (max-width: 420px) {
+  .app { width: calc(100% - 24px); margin-top: 32px; }
+  .vault-panel { padding: 18px; }
+  .switches { gap: 8px; }
+}
