@@ -10,6 +10,7 @@ import (
 	"syscall"
 	"time"
 
+	"thevault/backend/internal/session"
 	"thevault/backend/internal/transport/httpapi"
 )
 
@@ -26,9 +27,10 @@ func run() error {
 		addr = "127.0.0.1:8080"
 	}
 
+	sessions := session.NewService(session.NewMemoryStore(), session.Options{})
 	server := &http.Server{
 		Addr:              addr,
-		Handler:           httpapi.NewHandler(),
+		Handler:           httpapi.NewHandler(sessions),
 		ReadHeaderTimeout: 5 * time.Second,
 		ReadTimeout:       10 * time.Second,
 		WriteTimeout:      10 * time.Second,
