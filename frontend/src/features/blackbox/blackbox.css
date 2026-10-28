@@ -1,0 +1,58 @@
+.game-tabs { display: flex; gap: 8px; margin: 28px 0; }
+.game-tabs button { flex: 1; font-size: 12px; }
+.game-tabs button[aria-pressed="true"], .bb-tools button[aria-pressed="true"] { border-color: #b8e19d; background: #2b3c2f; color: #ccebba; }
+.bb-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 32px; }
+.bb-heading h2 { font-size: clamp(20px, 5vw, 28px); margin: 10px 0; }
+.bb-chip { border: 1px solid #59665d; padding: 8px; font-size: 11px; white-space: nowrap; color: #e4ba77; }
+.bb-modes, .bb-tools { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 10px; }
+.bb-modes button, .bb-tools button { font-size: 12px; flex: 1; }
+.bb-panel { padding: 24px; margin-top: 24px; border: 1px solid #59665d; border-radius: 12px; background: #1b2523; }
+.bb-panel h3 { margin: 0; font-size: inherit; font-weight: normal; }
+.bb-metrics { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin: 24px 0; }
+.bb-metrics dt { color: #b8c3b9; font-size: 11px; }
+.bb-metrics dd { margin: 6px 0 0; font-size: 17px; font-variant-numeric: tabular-nums; }
+.bb-board-wrap { margin-top: 20px; }
+.bb-board { position: relative; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); grid-template-rows: repeat(8, minmax(0, 1fr)); width: 100%; aspect-ratio: 1; }
+.bb-board button { position: relative; padding: 0; min-width: 0; min-height: 0; border-radius: 0; font-size: 13px; }
+.bb-board button:focus-visible { z-index: 2; outline-offset: -3px; }
+.bb-cell { border: 1px solid #435148; background: #14201d; color: #e4ba77; }
+.bb-cell small { position: absolute; left: 4px; top: 3px; font-size: 9px; color: #879b8c; font-weight: normal; }
+.bb-cell > span { font-size: clamp(14px, 4vw, 28px); }
+.bb-cell[data-mark="suspected"], .bb-cell[data-mark="solution"] { background: #393426; }
+.bb-cell[data-mark="empty"] { color: #a2b5a7; }
+.bb-cell:hover:not(:disabled) { background: #2b3831; }
+.bb-cell:disabled { opacity: 1; }
+.bb-port { display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid transparent; background: transparent; color: #c0d0c0; }
+.bb-port > span { font-size: clamp(8px, 2vw, 11px); }
+.bb-port > b { font-size: clamp(11px, 2.5vw, 16px); line-height: 1; margin-top: 2px; }
+.bb-port:hover:not(:disabled) { background: #354636; }
+.bb-port[data-result="exit"] { color: #b8e19d; }
+.bb-port[data-result="hit"] { color: #f2a39b; }
+.bb-port[data-result="reflection"] { color: #e4ba77; }
+.bb-port[data-selected="true"] { background: #354636; }
+.bb-port:disabled { opacity: .8; }
+.bb-trace { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; color: #92e3f1; }
+.bb-trace polyline { fill: none; stroke: currentColor; stroke-width: .055; stroke-linecap: round; stroke-linejoin: round; }
+.bb-trace circle { fill: currentColor; }
+.bb-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; color: #b8c3b9; font-size: 10px; line-height: 1.6; }
+.bb-log { list-style: none; padding: 0; }
+.bb-log li { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid #435148; font-size: 12px; }
+.bb-log li > button { margin-left: auto; font-size: 11px; }
+.bb-log-number { display: grid; place-items: center; min-width: 28px; height: 28px; border: 1px solid #59665d; color: #b8e19d; }
+.bb-rules { border-top: 1px solid #59665d; padding-top: 20px; margin-top: 32px; font-size: 12px; line-height: 1.8; }
+.bb-rules summary { cursor: pointer; min-height: 44px; color: #ccebba; }
+.bb-rules summary:focus-visible { outline: 2px solid #b8e19d; outline-offset: 4px; }
+.bb-rule-examples { display: grid; gap: 16px; }
+.bb-rule-examples figure { display: flex; align-items: center; gap: 16px; margin: 0; border: 1px solid #435148; padding: 16px; border-radius: 6px; }
+.bb-rule-examples svg { width: 100px; flex: 0 0 100px; color: #b8e19d; }
+.bb-rule-examples p { margin: 6px 0 0; color: #b8c3b9; }
+@media (max-width: 420px) {
+  .bb-panel { padding: 12px 6px; }
+  .bb-panel .panel-heading, .bb-metrics, .bb-tools, .bb-panel > .muted, .bb-panel > .check-note { margin-left: 6px; margin-right: 6px; }
+  .bb-panel .check-button { width: calc(100% - 12px); margin-left: 6px; }
+  .bb-rule-examples figure { padding: 10px; gap: 10px; align-items: flex-start; }
+  .bb-rule-examples svg { flex-basis: 76px; width: 76px; }
+  .bb-cell small { font-size: 7px; left: 2px; top: 1px; }
+  .bb-metrics dd { font-size: 15px; }
+  .bb-chip { display: none; }
+}
