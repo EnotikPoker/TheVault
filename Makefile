@@ -17,6 +17,7 @@ check:
 
 test:
 	cd backend && $(GO) test ./...
+	cd frontend && npm test
 
 build:
 	mkdir -p backend/bin
