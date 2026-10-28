@@ -10,6 +10,20 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: thevault
+          POSTGRES_PASSWORD: test_password
+          POSTGRES_DB: thevault_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U thevault -d thevault_test"
+          --health-interval 2s --health-timeout 3s --health-retries 30
+    env:
+      TEST_DATABASE_URL: postgres://thevault:test_password@127.0.0.1:5432/thevault_test?sslmode=disable
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
@@ -26,4 +40,5 @@ jobs:
         run: test -z "$(gofmt -l backend)"
       - run: make check
       - run: make test
+      - run: make test-integration
       - run: make build
