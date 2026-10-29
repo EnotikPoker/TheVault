@@ -1,6 +1,7 @@
 import { VaultHistory } from './VaultHistory';
 import { VaultPanel } from './VaultPanel';
 import { VaultResult } from './VaultResult';
+import { VaultGuide } from './VaultGuide';
 import { useElapsed } from './useElapsed';
 import { useVaultGame } from './useVaultGame';
 
@@ -20,6 +21,7 @@ export function VaultGame() {
 
   return (
     <>
+      <VaultGuide />
       {game.message && (
         <div className="feedback" role="alert">
           <p>{game.message}</p>

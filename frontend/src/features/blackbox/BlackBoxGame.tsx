@@ -20,6 +20,7 @@ export function BlackBoxGame() {
     <section className="blackbox" aria-label="Сканирование механизма">
       <div className="bb-heading"><div><p className="eyebrow">BLACK BOX · 6 × 6</p><h2>Что скрыто внутри?</h2></div><span className="bb-chip">3 элемента</span></div>
       <p className="intro">Запускайте лучи по краям сейфа. По их реакции найдите три скрытых элемента.</p>
+      <Rules />
       <div className="bb-modes" aria-label="Тип головоломки">
         <button className={state?.mode === 'daily' ? '' : 'secondary-button'} disabled={disabled} onClick={() => void game.start('daily')}>
           Сейф дня{game.daily ? ` · ${game.daily.date.slice(8)}.${game.daily.date.slice(5, 7)}` : ''}
@@ -56,7 +57,6 @@ export function BlackBoxGame() {
         </section>
         {state.mode === 'practice' && <div className="game-actions"><button className="secondary-button" disabled={disabled} onClick={() => void game.start('practice', true)}>Новая тренировка</button></div>}
       </>}
-      <Rules />
     </section>
   );
 }

@@ -1,0 +1,41 @@
+.game-guide { margin: 24px 0; padding: 20px; border: 1px solid #75847a; border-radius: 8px; background: #18221e; font-size: 13px; line-height: 1.8; }
+.game-guide h2 { font-size: 18px; margin: 0 0 12px; line-height: 1.5; }
+.game-guide h3 { font-size: 16px; margin: 28px 0 12px; line-height: 1.5; }
+.game-guide h4 { font-size: 14px; line-height: 1.6; }
+.guide-goal { color: #e3e9df; }
+.guide-quick-start { padding-left: 24px; margin-bottom: 20px; }
+.guide-quick-start li, .guide-content li { margin: 8px 0; }
+.guide-details > summary { min-height: 44px; display: list-item; padding: 10px 0; color: #ccebba; cursor: pointer; font-weight: bold; }
+.guide-details > summary:focus-visible { outline: 2px solid #b8e19d; outline-offset: 3px; }
+.guide-details[open] > summary { border-bottom: 1px solid #435148; }
+.guide-content p { margin: 12px 0; }
+.guide-content ul, .guide-content ol { padding-left: 22px; }
+.guide-content dl { margin: 12px 0; }
+.guide-content dt { font-weight: bold; color: #ccebba; margin-top: 16px; }
+.guide-content dd { margin: 4px 0 0; color: #c0cdc2; }
+.guide-note { padding: 12px 16px; border-left: 3px solid #e4ba77; background: #242920; }
+.guide-example { margin: 24px 0; padding: 16px; border: 1px solid #59665d; border-radius: 6px; background: #101818; }
+.guide-example h3 { margin-top: 0; }
+.guide-example-label { font-size: 11px; letter-spacing: .07em; color: #e4ba77; }
+.guide-progress { color: #b8c3b9; font-size: 12px; }
+.guide-example-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.guide-example-actions button { font-size: 12px; flex: 1 1 120px; }
+.guide-example-result { padding: 12px; border: 1px solid #59665d; border-radius: 4px; margin: 16px 0; }
+.guide-example-result > p:first-child { margin-top: 0; }
+.guide-example-result > p:last-child { margin-bottom: 0; }
+.guide-example-switches { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; padding: 0; list-style: none; }
+.guide-content .guide-example-switches { padding: 0; }
+.guide-example-switches li { display: grid; justify-items: center; gap: 4px; padding: 8px 2px; background: #1b2523; border: 1px solid #435148; font-size: 11px; }
+.guide-example-switches [data-on="true"] b { color: #b8e19d; }
+.guide-example-indicators { list-style: none; padding: 0; }
+.guide-content .guide-example-indicators { padding: 0; }
+.guide-example-indicators li { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+.guide-scanner-diagram { display: block; width: min(100%, 380px); margin: 12px auto; }
+.guide-scanner-diagram text { font-family: ui-monospace, monospace; }
+.guide-ray-line { fill: none; stroke: #92e3f1; stroke-width: .06; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 420px) {
+  .game-guide { padding: 16px 12px; font-size: 12px; }
+  .guide-example { padding: 12px 8px; }
+  .guide-note { padding: 10px; }
+  .guide-example-switches { gap: 3px; }
+}

@@ -39,19 +39,10 @@
 .bb-log li { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid #435148; font-size: 12px; }
 .bb-log li > button { margin-left: auto; font-size: 11px; }
 .bb-log-number { display: grid; place-items: center; min-width: 28px; height: 28px; border: 1px solid #59665d; color: #b8e19d; }
-.bb-rules { border-top: 1px solid #59665d; padding-top: 20px; margin-top: 32px; font-size: 12px; line-height: 1.8; }
-.bb-rules summary { cursor: pointer; min-height: 44px; color: #ccebba; }
-.bb-rules summary:focus-visible { outline: 2px solid #b8e19d; outline-offset: 4px; }
-.bb-rule-examples { display: grid; gap: 16px; }
-.bb-rule-examples figure { display: flex; align-items: center; gap: 16px; margin: 0; border: 1px solid #435148; padding: 16px; border-radius: 6px; }
-.bb-rule-examples svg { width: 100px; flex: 0 0 100px; color: #b8e19d; }
-.bb-rule-examples p { margin: 6px 0 0; color: #b8c3b9; }
 @media (max-width: 420px) {
   .bb-panel { padding: 12px 6px; }
   .bb-panel .panel-heading, .bb-metrics, .bb-tools, .bb-panel > .muted, .bb-panel > .check-note { margin-left: 6px; margin-right: 6px; }
   .bb-panel .check-button { width: calc(100% - 12px); margin-left: 6px; }
-  .bb-rule-examples figure { padding: 10px; gap: 10px; align-items: flex-start; }
-  .bb-rule-examples svg { flex-basis: 76px; width: 76px; }
   .bb-cell small { font-size: 7px; left: 2px; top: 1px; }
   .bb-metrics dd { font-size: 15px; }
   .bb-chip { display: none; }
