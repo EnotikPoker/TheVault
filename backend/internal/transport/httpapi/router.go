@@ -15,7 +15,7 @@ type sessionService interface {
 }
 
 // NewHandler returns the API router.
-func NewHandler(sessions sessionService) http.Handler {
+func NewHandler(sessions sessionService, routes ...func(*http.ServeMux)) http.Handler {
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /api/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")
@@ -26,5 +26,8 @@ func NewHandler(sessions sessionService) http.Handler {
 	mux.HandleFunc("POST /api/v1/vaults", api.create)
 	mux.HandleFunc("GET /api/v1/vaults/{id}", api.get)
 	mux.HandleFunc("POST /api/v1/vaults/{id}/checks", api.check)
+	for _, register := range routes {
+		register(mux)
+	}
 	return mux
 }

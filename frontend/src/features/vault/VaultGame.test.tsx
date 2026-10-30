@@ -114,9 +114,13 @@ describe('playable panel', () => {
     const user = userEvent.setup();
     render(<VaultGame />);
     await user.tab();
+    expect(screen.getByText('Открыть инструкцию и учебный пример')).toHaveFocus();
+    await user.tab();
     expect(screen.getByRole('button', { name: 'Начать игру' })).toHaveFocus();
     await user.keyboard('{Enter}');
     await screen.findByRole('switch', { name: 'S1' });
+    await user.tab();
+    expect(screen.getByText('Открыть инструкцию и учебный пример')).toHaveFocus();
     await user.tab();
     expect(screen.getByRole('switch', { name: 'S1' })).toHaveFocus();
     await user.keyboard(' ');

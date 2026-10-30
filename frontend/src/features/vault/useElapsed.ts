@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import type { VaultSession } from '../../shared/api/vaults';
 
-export function useElapsed(session: VaultSession | null, receivedAt: number): number {
+export function useElapsed(session: { id: string; status: string; elapsedMs: number } | null, receivedAt: number): number {
   const [now, setNow] = useState(() => performance.now());
   const status = session?.status;
   const id = session?.id;
